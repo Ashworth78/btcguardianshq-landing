@@ -5,70 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BTCGuardiansHQ • Sovereign Bitcoin Inheritance</title>
     <style>
-        body { font-family: system-ui, sans-serif; background: #0f0f0f; color: #e0e0e0; margin: 0; padding: 0; line-height: 1.7; }
-        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
-        h1 { color: #f7931a; font-size: 3rem; margin: 0 0 20px; }
-        h2 { color: #f7931a; margin-top: 50px; }
-        .tagline { font-size: 1.4rem; color: #aaa; }
-        .cta { background: #f7931a; color: black; padding: 14px 28px; font-weight: bold; border-radius: 8px; text-decoration: none; display: inline-block; margin: 20px 10px 20px 0; }
-        .section { margin-bottom: 60px; }
-        footer { text-align: center; color: #666; padding: 60px 0 30px; }
+        body {
+            background-color: #0f0f0f;
+            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+        h1 {
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .tagline {
+            font-size: 1.3rem;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #f7931a;
+            color: #000;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        section {
+            margin-bottom: 60px;
+        }
+        h2 {
+            color: #f7931a;
+            margin-bottom: 20px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        .feature {
+            background-color: #1a1a1a;
+            padding: 25px;
+            border-radius: 8px;
+        }
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: #666;
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+        <!-- Hero -->
+        <header>
+            <h1>BTCGuardiansHQ</h1>
+            <p class="tagline">Secure, Non-Custodial Bitcoin Inheritance for Future Generations</p>
+            <a href="#" class="btn">Join the Waitlist</a>
+        </header>
 
-<div class="container">
+        <!-- What is it -->
+        <section>
+            <h2>What is BTCGuardiansHQ?</h2>
+            <p>BTCGuardiansHQ builds free, open-source tools for Bitcoin inheritance that prioritize self-sovereignty. The goal is simple: let people pass Bitcoin to their heirs without relying on custodians, banks, or services that can fail or demand KYC.</p>
+        </section>
 
-    <h1>BTCGuardiansHQ</h1>
-    <p class="tagline">Secure, Non-Custodial Bitcoin Inheritance for Future Generations</p>
-    <a href="#" class="cta">Join the Waitlist</a>
+        <!-- Why the Node Matters -->
+        <section>
+            <h2>Why Our Node Matters</h2>
+            <p>This project is powered by a Bitcoin node that has been running continuously since 2009. This gives us an independent, archival source of blockchain data that does not rely on third-party services.</p>
+            <ul>
+                <li>Independent block validation</li>
+                <li>Full archival history (never pruned)</li>
+                <li>Reduces trust in external explorers or APIs</li>
+            </ul>
+        </section>
 
-    <div class="section">
-        <h2>What is BTCGuardiansHQ?</h2>
-        <p>BTCGuardiansHQ is a project building free, open tools for Bitcoin inheritance that prioritize self-sovereignty. The goal is to let people pass Bitcoin to their heirs without relying on custodians, banks, or services that can fail or demand KYC.</p>
+        <!-- Key Features -->
+        <section>
+            <h2>Key Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <strong>🔒 Air-Gapped Signing</strong><br>
+                    Generate and sign transactions completely offline using PSBTs.
+                </div>
+                <div class="feature">
+                    <strong>🔀 Shamir’s Secret Sharing</strong><br>
+                    Split your seed into multiple shards so no single point of failure exists.
+                </div>
+                <div class="feature">
+                    <strong>✅ Fully Non-Custodial</strong><br>
+                    You remain in full control at all times. No third party ever holds your keys.
+                </div>
+                <div class="feature">
+                    <strong>🛡️ Designed for Heirs</strong><br>
+                    Built with long-term recovery in mind — not just for today, but for decades ahead.
+                </div>
+            </div>
+        </section>
+
+        <!-- How it Works -->
+        <section>
+            <h2>How Inheritance Works</h2>
+            <p>The system is designed so heirs can recover funds even many years later, without needing technical expertise. Using Shamir’s Secret Sharing, the seed is split into multiple pieces. These pieces can be distributed to trusted people or stored securely. When the time comes, the required number of shards can be combined to recover the funds.</p>
+        </section>
+
+        <!-- Current Status -->
+        <section>
+            <h2>Current Status</h2>
+            <p>BTCGuardiansHQ is an active project in development. A local version of the explorer is running and early vault functionality (including vault.js with Shamir’s Secret Sharing) has been tested. The project is not yet publicly available. We are focused on building secure, usable tools before wider release.</p>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>This is a real project being built with care. No hype. No shortcuts.</p>
+            <p><strong>btcguardianshq.com • btcguardianshq.info</strong></p>
+            <p>Built for sovereignty • Powered by Bitcoin infrastructure since 2009</p>
+        </footer>
     </div>
-
-    <div class="section">
-        <h2>Why Our Node Matters</h2>
-        <p>This project is powered by a Bitcoin node that has been running continuously since 2009. This gives us an independent, archival source of blockchain data that does not rely on third-party services.</p>
-        <ul>
-            <li>Independent block validation</li>
-            <li>Full archival history (never pruned)</li>
-            <li>Reduces trust in external explorers or APIs</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Key Features</h2>
-        <ul>
-            <li><strong>🔒 Air-Gapped Signing</strong> — Generate and sign transactions completely offline using PSBTs.</li>
-            <li><strong>🧩 Shamir’s Secret Sharing</strong> — Split your seed into multiple shards so no single point of failure exists.</li>
-            <li><strong>🕊️ Fully Non-Custodial</strong> — You remain in full control at all times. No third party ever holds your keys.</li>
-            <li><strong>📜 Designed for Heirs</strong> — Built with long-term recovery in mind — not just for today, but for decades ahead.</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>How Inheritance Works</h2>
-        <p>The system is designed so that heirs can recover funds even many years later, without needing technical expertise. Using Shamir’s Secret Sharing, the seed is split into multiple pieces. These pieces can be distributed to trusted people or stored securely. When the time comes, the required number of shards can be combined to recover the funds.</p>
-    </div>
-
-    <div class="section">
-        <h2>Current Status</h2>
-        <p>BTCGuardiansHQ is an active project in development. A local version of the explorer is running, and early vault functionality (including <strong>vault.js</strong> with Shamir’s Secret Sharing) has been tested. The project is not yet publicly available. We are focused on building secure, usable tools before wider release.</p>
-    </div>
-
-    <div style="text-align:center; margin:60px 0;">
-        <a href="#" class="cta">Join the Waitlist</a>
-    </div>
-
-    <footer>
-        <p>This is a real project being built with care. No hype. No shortcuts.</p>
-        <p><strong>btcguardianshq.com • btcguardianshq.info</strong></p>
-        <p>Built for sovereignty • Powered by Bitcoin infrastructure since 2009</p>
-    </footer>
-
-</div>
-
 </body>
 </html>
