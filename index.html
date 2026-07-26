@@ -77,7 +77,92 @@
         </a>
     </div>
 
-    <!-- How it works, Features, Security sections remain the same as previous version -->
+    <!-- How it works -->
+    <div id="how" class="max-w-5xl mx-auto px-8 py-16 border-t border-zinc-800">
+        <div class="text-center mb-12">
+            <div class="text-orange-400 text-sm font-semibold tracking-widest">THE PROCESS</div>
+            <h2 class="text-4xl font-semibold tracking-tight mt-3">Simple. Sovereign. Secure.</h2>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+                <div class="text-orange-400 mb-6 text-4xl">1️⃣</div>
+                <h3 class="font-semibold text-2xl mb-3">Create a Vault</h3>
+                <p class="text-zinc-400">Generate multisig + timelock addresses using our custom vault.js tool with proper Shamir’s Secret Sharing in a fully air-gapped Tails OS environment.</p>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+                <div class="text-orange-400 mb-6 text-4xl">2️⃣</div>
+                <h3 class="font-semibold text-2xl mb-3">Split Your Keys</h3>
+                <p class="text-zinc-400">Divide your seed into multiple encrypted shards using real cryptographic Shamir’s Secret Sharing. No single shard reveals any information.</p>
+            </div>
+
+            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
+                <div class="text-orange-400 mb-6 text-4xl">3️⃣</div>
+                <h3 class="font-semibold text-2xl mb-3">Set Inheritance Rules</h3>
+                <p class="text-zinc-400">Define clear conditions and time-locks. Store shards on metal plates in different geographic locations. Your heirs can recover the funds using your detailed recovery instructions.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features -->
+    <div id="features" class="max-w-6xl mx-auto px-8 py-16 border-t border-zinc-800 bg-zinc-950">
+        <h2 class="text-4xl font-semibold tracking-tight text-center mb-12">Built with Care</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="p-8 bg-zinc-900 border border-zinc-800 rounded-3xl flex gap-5">
+                <i class="fa-solid fa-globe text-3xl text-orange-400 mt-1"></i>
+                <div>
+                    <div class="font-semibold text-xl mb-2">Genesis Node Powered</div>
+                    <div class="text-zinc-400">Connected to one of the oldest continuously running Bitcoin nodes (since 2009).</div>
+                </div>
+            </div>
+
+            <div class="p-8 bg-zinc-900 border border-zinc-800 rounded-3xl flex gap-5">
+                <i class="fa-solid fa-user-shield text-3xl text-orange-400 mt-1"></i>
+                <div>
+                    <div class="font-semibold text-xl mb-2">Fully Non-Custodial</div>
+                    <div class="text-zinc-400">You control your keys at all times. We never see or hold them.</div>
+                </div>
+            </div>
+
+            <div class="p-8 bg-zinc-900 border border-zinc-800 rounded-3xl flex gap-5">
+                <i class="fa-solid fa-lock text-3xl text-orange-400 mt-1"></i>
+                <div>
+                    <div class="font-semibold text-xl mb-2">Air-Gapped First</div>
+                    <div class="text-zinc-400">Vault creation and signing happens completely offline in Tails OS.</div>
+                </div>
+            </div>
+
+            <div class="p-8 bg-zinc-900 border border-zinc-800 rounded-3xl flex gap-5">
+                <i class="fa-solid fa-tv text-3xl text-orange-400 mt-1"></i>
+                <div>
+                    <div class="font-semibold text-xl mb-2">Live Private Explorer</div>
+                    <div class="text-zinc-400">Watch-only monitoring of your vault addresses using your own node + self-hosted Mempool explorer over Tor.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security -->
+    <div id="security" class="max-w-5xl mx-auto px-8 py-16 border-t border-zinc-800">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl font-semibold tracking-tight mb-6">We don’t ask for trust.<br>We ask you to verify.</h2>
+            <p class="text-lg text-zinc-400 mb-8">
+                Our philosophy is strict operational security (opsec). Everything is designed to run fully air-gapped in Tails OS. 
+                Private keys never touch the internet. We use proper Shamir’s Secret Sharing and strong encryption.
+            </p>
+        </div>
+    </div>
+
+    <!-- Disclaimer -->
+    <div class="max-w-4xl mx-auto px-8 py-12 text-center border-t border-zinc-800 text-xs text-zinc-500 bg-zinc-900">
+        <p class="mb-4">
+            <strong>DISCLAIMER:</strong> BTCGuardiansHQ provides open-source tools for educational and personal use. 
+            We are not financial advisors. You are fully responsible for your own keys and funds. 
+            Use at your own risk. No liability is accepted for any loss.
+        </p>
+    </div>
 
     <footer class="border-t border-zinc-800 py-8 text-center text-sm text-zinc-500">
         © BTCGuardiansHQ • Built with sovereignty in mind • Powered by Bitcoin since 2009
