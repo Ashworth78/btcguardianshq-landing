@@ -7,14 +7,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
-        }
+        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
 
-    <!-- Top Navigation -->
+    <!-- Navbar -->
     <nav class="border-b border-zinc-800 bg-zinc-950 sticky top-0 z-50">
         <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
             <div class="flex items-center gap-x-3">
@@ -28,44 +26,56 @@
                 <a href="#features" class="hover:text-white transition-colors">Features</a>
                 <a href="#how" class="hover:text-white transition-colors">How it works</a>
                 <a href="#security" class="hover:text-white transition-colors">Security</a>
-                <a href="https://github.com/Ashworth78/btcguardianshq-landing" target="_blank"
-                   class="flex items-center gap-x-2 px-5 py-2.5 rounded-2xl border border-zinc-700 hover:bg-zinc-900 transition-colors">
-                    <i class="fa-brands fa-github"></i>
-                    <span>GitHub</span>
+                <a href="https://github.com/sponsors/Ashworth78" target="_blank"
+                   class="flex items-center gap-x-2 px-5 py-2.5 rounded-2xl border border-orange-500 text-orange-400 hover:bg-zinc-900 transition-colors">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Sponsor</span>
                 </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <div class="max-w-5xl mx-auto px-8 pt-24 pb-20 text-center">
-        <div class="mb-6">
-            <p class="text-lg italic text-zinc-400">"The root problem with conventional currency is all the trust that's required to make it work."</p>
+    <div class="max-w-5xl mx-auto px-8 pt-20 pb-16 text-center">
+        <div class="mb-8">
+            <p class="text-lg italic text-zinc-400">
+                “The root problem with conventional currency is all the trust that's required to make it work.”
+            </p>
             <p class="text-sm text-zinc-500 mt-2">— Satoshi Nakamoto, 2009</p>
         </div>
 
         <h1 class="text-6xl md:text-7xl font-semibold tracking-tighter leading-none mb-6">
             Secure Bitcoin Inheritance<br>for Future Generations
         </h1>
-
+        
         <p class="max-w-lg mx-auto text-xl text-zinc-400 mb-10">
-            Free, open-source, non-custodial tools built so you can pass your Bitcoin to your heirs — without custodians, banks, or KYC.
+            Free, non-custodial tools that let you pass Bitcoin to your heirs 
+            without banks, custodians, or KYC.
         </p>
 
-        <div class="flex items-center justify-center gap-x-4">
-            <a href="#how" class="px-8 py-4 bg-orange-500 hover:bg-orange-400 text-black font-semibold rounded-2xl transition-all">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <a href="#how" class="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-2xl transition-all">
                 How it works
             </a>
-            <a href="https://github.com/Ashworth78/btcguardianshq-landing" target="_blank"
-               class="px-8 py-4 border border-zinc-700 rounded-2xl font-medium flex items-center gap-x-3 hover:bg-zinc-900 transition-all">
-                <i class="fa-brands fa-github"></i>
-                <span>View on GitHub</span>
+            <a href="https://github.com/sponsors/Ashworth78" target="_blank"
+               class="px-8 py-4 border border-orange-500 text-orange-400 rounded-2xl font-medium flex items-center gap-x-3 hover:bg-zinc-900 transition-all">
+                <i class="fa-solid fa-heart"></i>
+                <span>Sponsor the Project</span>
             </a>
         </div>
     </div>
 
-    <!-- How it Works -->
-    <div id="how" class="max-w-6xl mx-auto px-8 py-16 border-t border-zinc-800">
+    <!-- Donation Address -->
+    <div class="max-w-5xl mx-auto px-8 py-8 text-center border-t border-zinc-800">
+        <p class="text-sm text-zinc-400 mb-2">Support the project with Bitcoin</p>
+        <a href="bitcoin:1CqtHmQ8wxFps9kessQwkbs5q6qWKaUZ5C" 
+           class="inline-block bg-zinc-900 border border-orange-500 text-orange-400 px-6 py-3 rounded-2xl font-mono text-sm hover:bg-zinc-800 transition-all">
+            1CqtHmQ8wxFps9kessQwkbs5q6qWKaUZ5C
+        </a>
+    </div>
+
+    <!-- How it works -->
+    <div id="how" class="max-w-5xl mx-auto px-8 py-16 border-t border-zinc-800">
         <div class="text-center mb-12">
             <div class="text-orange-400 text-sm font-semibold tracking-widest">THE PROCESS</div>
             <h2 class="text-4xl font-semibold tracking-tight mt-3">Simple. Sovereign. Secure.</h2>
@@ -143,7 +153,7 @@
     </div>
 
     <footer class="border-t border-zinc-800 py-8 text-center text-sm text-zinc-500">
-        © BTCGuardiansHQ • Built for sovereignty • Powered by Bitcoin since 2009
+        © BTCGuardiansHQ • Built with sovereignty in mind • Powered by Bitcoin since 2009
     </footer>
 
 </body>
