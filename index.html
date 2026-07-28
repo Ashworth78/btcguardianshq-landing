@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +8,31 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+   /* Mobile improvements */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.1rem;
+  }
+  .tagline {
+    font-size: 1.1rem;
+  }
+  .container {
+    padding: 20px 15px;
+  }
+  header {
+    padding: 40px 0 30px;
+  }
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+  .features {
+    grid-template-columns: 1fr;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+}     body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
     </style>
 </head>
 <body class="bg-zinc-950 text-zinc-200">
@@ -56,9 +81,7 @@
             <a href="#how" class="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-2xl transition-all">
                 How it works
             </a>
-            <a href="#" onclick="alert('Waitlist signup coming soon!')" 
-               class="px-8 py-4 bg-white text-black font-semibold rounded-2xl hover:bg-zinc-100 transition-all">
-                Join the Waitlist
+            <a href="mailto:waitlist@btcguardianshq.info?subject=Waitlist%20Signup&body=Please%20add%20me%20to%20the%20BTCGuardiansHQ%20waitlist." class="btn">Join the Waitlist</a>
             </a>
             <a href="https://github.com/sponsors/Ashworth78" target="_blank"
                class="px-8 py-4 border border-orange-500 text-orange-400 rounded-2xl font-medium flex items-center gap-x-3 hover:bg-zinc-900 transition-all">
