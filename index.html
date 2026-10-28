@@ -1,180 +1,84 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTCGuardiansHQ • Sovereign Bitcoin Inheritance</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <style>
-        body { font-family: 'Inter', system-ui, -apple-system, sans-serif; }
 
-        /* Mobile improvements */
-        @media (max-width: 768px) {
-            h1 { font-size: 2.1rem; }
-            .tagline { font-size: 1.1rem; }
-            .container { padding: 20px 15px; }
-            header { padding: 40px 0 30px; }
-            .btn { padding: 12px 24px; font-size: 0.95rem; }
-            .features { grid-template-columns: 1fr; }
-            h2 { font-size: 1.5rem; }
-        }
-    </style>
-</head>
-<body class="bg-zinc-950 text-zinc-200">
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BTCGuardiansHQ · Free, open-source bitcoin inheritance</title>
+<meta name="description" content="Free, open-source, non-custodial bitcoin inheritance prototype. Seed split into encrypted 3-of-5 shares offline on Tails. No custody, no KYC, no token.">
+<meta name="theme-color" content="#0b0b0d">
+<style>
+:root{--bg:#0b0b0d;--card:#141418;--line:#26262c;--tx:#e8e8ea;--mut:#a0a0aa;--or:#f7931a}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--or)}a:focus-visible,.btn:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(11,11,13,.92);backdrop-filter:blur(6px);z-index:5}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-weight:700;color:var(--tx);text-decoration:none}.logo span{color:var(--or)}
+nav a{color:var(--mut);text-decoration:none;margin-left:18px;font-size:.95rem}nav a:hover{color:var(--tx)}
+@media(max-width:700px){nav a.opt{display:none}}
+.hero{padding:80px 0 56px}.badge{display:inline-block;border:1px solid var(--or);color:var(--or);border-radius:99px;padding:2px 12px;font-size:.8rem}
+h1{font-size:clamp(2rem,5vw,3.2rem);line-height:1.15;margin:16px 0}h2{font-size:1.7rem;margin:0 0 8px}h3{margin:0 0 6px;font-size:1.1rem}
+.lead{color:var(--mut);font-size:1.15rem;max-width:640px}
+.btn{display:inline-block;padding:12px 22px;border-radius:12px;text-decoration:none;font-weight:600;margin:8px 10px 0 0}
+.pri{background:var(--or);color:#111}.sec{border:1px solid var(--line);color:var(--tx)}
+section{padding:56px 0;border-top:1px solid var(--line)}.sub{color:var(--mut);margin:0 0 28px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}.card p{color:var(--mut);margin:0}
+.n{color:var(--or);font-weight:700;font-size:.85rem}
+ul.ok,ul.no{padding-left:0;list-style:none;margin:0}ul.ok li:before{content:"✓ ";color:#4ade80}ul.no li:before{content:"○ ";color:var(--mut)}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:720px;font-size:.92rem}
+caption{text-align:left;color:var(--mut);padding-bottom:10px}th,td{border-bottom:1px solid var(--line);padding:10px;text-align:left;vertical-align:top}
+thead th{color:var(--mut);font-weight:600}tr.me{background:rgba(247,147,26,.08)}tr.me th{color:var(--or)}
+.note{color:var(--mut);font-size:.9rem}.warn{border-left:3px solid var(--or);padding:12px 16px;background:var(--card);border-radius:8px}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-size:.9rem}
+</style></head><body>
+<header class="top"><div class="wrap"><a class="logo" href="#">BTC<span>Guardians</span>HQ</a>
+<nav aria-label="Main"><a href="#how">How it works</a><a class="opt" href="#status">Status</a><a class="opt" href="#compare">Compare</a><a href="https://github.com/Ashworth78/btcguardianshq">GitHub</a></nav></div></header>
+<main>
+<div class="wrap hero">
+<span class="badge">Unaudited prototype · volunteer review open</span>
+<h1>Pass your bitcoin on.<br>Not lose it.</h1>
+<p class="lead">Free, open-source tools to help your family inherit your bitcoin. No custodian, no KYC, no token. Your seed stays offline, split into encrypted shares only your heirs can put back together.</p>
+<a class="btn pri" href="https://github.com/Ashworth78/btcguardianshq/issues/3">Help review the code</a><a class="btn sec" href="https://github.com/Ashworth78/btcguardianshq">View on GitHub</a>
+</div>
 
-    <!-- Navbar -->
-    <nav class="border-b border-zinc-800 bg-zinc-950 sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between">
-            <div class="flex items-center gap-x-3">
-                <div class="w-8 h-8 bg-orange-500 rounded-2xl flex items-center justify-center">
-                    <i class="fa-solid fa-shield-halved text-white text-lg"></i>
-                </div>
-                <span class="text-2xl font-semibold tracking-tight">BTCGuardiansHQ</span>
-            </div>
+<section id="how"><div class="wrap"><h2>How it works</h2><p class="sub">Four steps, all offline where it matters.</p>
+<div class="grid">
+<div class="card"><div class="n">01</div><h3>Create shares offline</h3><p>Run vault.js on Tails with networking off. Your seed is split 3-of-5 with Shamir, and each share is encrypted with AES-256-GCM using an Argon2id key from your passphrase.</p></div>
+<div class="card"><div class="n">02</div><h3>Store 5 shares apart</h3><p>Keep the shares in different places or with different trusted people. One or two shares alone reveal nothing.</p></div>
+<div class="card"><div class="n">03</div><h3>Heirs recover with 3</h3><p>Any 3 shares plus the passphrase rebuild the seed, offline on Tails, following the plain-English heir runbook.</p></div>
+<div class="card"><div class="n">04</div><h3>Restore to a hardware wallet</h3><p>The recovered seed goes onto a new hardware wallet, and the funds are moved under the heir's own control.</p></div>
+</div></div></section>
 
-            <div class="flex items-center gap-x-8 text-sm font-medium">
-                <a href="#features" class="hover:text-white transition-colors">Features</a>
-                <a href="#how" class="hover:text-white transition-colors">How it works</a>
-                <a href="#security" class="hover:text-white transition-colors">Security</a>
-                <a href="https://github.com/sponsors/Ashworth78" target="_blank"
-                   class="flex items-center gap-x-2 px-5 py-2.5 rounded-2xl border border-orange-500 text-orange-400 hover:bg-zinc-900 transition-colors">
-                    <i class="fa-solid fa-heart"></i>
-                    <span>Sponsor</span>
-                </a>
-            </div>
-        </div>
-    </nav>
+<section id="status"><div class="wrap"><h2>Works now / Not yet</h2><p class="sub">Honest about where it is.</p>
+<div class="grid">
+<div class="card"><h3>Works now</h3><ul class="ok"><li>3-of-5 Shamir shares of a BIP39 seed</li><li>Argon2id + AES-256-GCM encryption</li><li>Fully offline use on Tails</li><li>Heir runbook in plain English</li><li>Own archival Bitcoin Core node (<a href="https://github.com/Ashworth78/btcguardianshq/blob/main/docs/Node-proofs.md">proofs</a>)</li><li>Private, LAN-only Mempool explorer</li></ul></div>
+<div class="card"><h3>Not yet</h3><ul class="no"><li>Multisig</li><li>Timelocks / on-chain rules</li><li>PSBT signing</li><li>Miniscript inheritance (being tested on testnet)</li><li>Independent review completed</li></ul></div>
+</div>
+<p class="warn" style="margin-top:20px">vault.js is an unaudited prototype. Do not trust real funds to it yet. Test with fake data only.</p>
+</div></section>
 
-    <!-- Hero -->
-    <div class="max-w-5xl mx-auto px-8 pt-20 pb-16 text-center">
-        <div class="mb-8">
-            <p class="text-lg italic text-zinc-400">
-                “The root problem with conventional currency is all the trust that's required to make it work.”
-            </p>
-            <p class="text-sm text-zinc-500 mt-2">— Satoshi Nakamoto, 2009</p>
-        </div>
+<section id="compare"><div class="wrap"><h2>How it compares</h2><p class="sub">Great projects already exist. Here is where this one fits.</p>
+<div class="tw"><table>
+<caption>How BTCGuardiansHQ compares (checked on each project's own site, Oct 2026)</caption>
+<thead><tr><th scope="col">Project</th><th scope="col">Custody</th><th scope="col">KYC</th><th scope="col">Inheritance approach</th><th scope="col">Cost</th><th scope="col">Status</th></tr></thead>
+<tbody>
+<tr class="me"><th scope="row">BTCGuardiansHQ</th><td>Non-custodial</td><td>None</td><td>Off-chain: seed split 3-of-5 (Shamir), Argon2id + AES-256-GCM, offline on Tails</td><td>Free, MIT open source</td><td>Unaudited prototype, volunteer review wanted</td></tr>
+<tr><th scope="row">Liana</th><td>Non-custodial</td><td>None stated</td><td>On-chain: multisig + timelock recovery path</td><td>Varies</td><td>Released wallet</td></tr>
+<tr><th scope="row">Nunchuk</th><td>Non-custodial</td><td>Zero KYC</td><td>On-chain: multisig with timelocks</td><td>Varies</td><td>Released platform</td></tr>
+<tr><th scope="row">Bitcoin Keeper</th><td>Non-custodial</td><td>No signups (desktop)</td><td>On-chain: multisig, wallet timelock, inheritance tools</td><td>Free desktop app, open source</td><td>Released wallet</td></tr>
+<tr><th scope="row">Casa</th><td>Non-custodial</td><td>Varies</td><td>Multisig with inheritance features</td><td>Varies</td><td>Commercial service</td></tr>
+<tr><th scope="row">Unchained</th><td>Collaborative multisig; also offers qualified custody</td><td>Varies</td><td>Multisig plus trust / legal setups</td><td>Varies</td><td>Commercial service</td></tr>
+</tbody></table>
+<p class="note">On-chain tools such as Liana, Nunchuk and Keeper enforce inheritance rules in Bitcoin itself. BTCGuardiansHQ does not do that yet: it protects the seed off-chain. Each approach has trade-offs; pick what fits you.</p></div></div></section>
 
-        <h1 class="text-6xl md:text-7xl font-semibold tracking-tighter leading-none mb-6">
-            Secure Bitcoin Inheritance<br>for Future Generations
-        </h1>
-        
-        <p class="max-w-lg mx-auto text-xl text-zinc-400 mb-10">
-            Free, open-source, non-custodial tools built so you can pass your Bitcoin to your heirs — without custodians, banks, or KYC.
-        </p>
+<section id="why"><div class="wrap"><h2>Why it matters</h2>
+<p class="lead">A lot of bitcoin is lost because nobody planned for what happens next. Free, open, verifiable tools mean any family can plan an inheritance without handing their keys or identity to a company.</p></div></section>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <a href="#how" class="px-8 py-4 bg-orange-500 hover:bg-orange-600 text-black font-semibold rounded-2xl transition-all">
-                How it works
-            </a>
-            <a href="mailto:waitlist@btcguardianshq.info?subject=Waitlist%20Signup&body=Please%20add%20me%20to%20the%20BTCGuardiansHQ%20waitlist." 
-               class="px-8 py-4 bg-white text-black font-semibold rounded-2xl hover:bg-zinc-100 transition-all">
-                Join the Waitlist
-            </a>
-            <a href="https://github.com/sponsors/Ashworth78" target="_blank"
-               class="px-8 py-4 border border-orange-500 text-orange-400 rounded-2xl font-medium flex items-center gap-x-3 hover:bg-zinc-900 transition-all">
-                <i class="fa-solid fa-heart"></i>
-                <span>Sponsor</span>
-            </a>
-        </div>
-    </div>
-
-    <!-- Donation Address -->
-    <div class="max-w-5xl mx-auto px-8 py-8 text-center border-t border-zinc-800">
-        <p class="text-sm text-zinc-400 mb-2">Support the project with Bitcoin</p>
-        <a href="bitcoin:1sXyCoMdHmPi2axsmXqLeNSkRi7RXkfPQ" 
-           class="inline-block bg-zinc-900 border border-orange-500 text-orange-400 px-6 py-3 rounded-2xl font-mono text-sm hover:bg-zinc-800 transition-all">
-            1sXyCoMdHmPi2axsmXqLeNSkRi7RXkfPQ
-        </a>
-    </div>
-
-    <!-- How it works -->
-    <div id="how" class="max-w-5xl mx-auto px-8 py-16 border-t border-zinc-800">
-        <div class="text-center mb-12">
-            <div class="text-orange-400 text-sm font-semibold tracking-widest">THE PROCESS</div>
-            <h2 class="text-4xl font-semibold tracking-tight mt-3">Simple. Sovereign. Secure.</h2>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6">
-            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
-                <div class="text-orange-400 mb-6 text-4xl">1️⃣</div>
-                <h3 class="font-semibold text-2xl mb-3">Create a Vault</h3>
-                <p class="text-zinc-400">Generate multisig + timelock addresses using our custom vault.js tool with proper Shamir’s Secret Sharing in a fully air-gapped Tails OS environment.</p>
-            </div>
-
-            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
-                <div class="text-orange-400 mb-6 text-4xl">2️⃣</div>
-                <h3 class="font-semibold text-2xl mb-3">Split Your Keys</h3>
-                <p class="text-zinc-400">Divide your seed into multiple encrypted shards using real cryptographic Shamir’s Secret Sharing. No single shard reveals any information.</p>
-            </div>
-
-            <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-8">
-                <div class="text-orange-400 mb-6 text-4xl">3️⃣</div>
-                <h3 class="font-semibold text-2xl mb-3">Set Inheritance Rules</h3>
-                <p class="text-zinc-400">Define clear conditions and time-locks. Store shards on metal plates in different geographic locations. Your heirs can recover the funds using your detailed recovery instructions.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Features -->
-    <div id="features" class="max-w-6xl mx-auto px-8 py-16 border-t border-zinc-800 bg-zinc-950">
-        <h2 class="text-4xl font-semibold tracking-tight text-center mb-12">Built with Care</h2>
-
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="p-8 bg-zinc-900 border border-zinc-800 rounded-3xl flex gap-5">
-                <i class="fa-solid fa-globe text-3xl text-orange-400 mt-1"></i>
-                <div>
-                </div>
-            </div>
-
-            <div class="p-8 bg-zinc-900 border border-zinc-800 rounded-3xl flex gap-5">
-                <i class="fa-solid fa-user-shield text-3xl text-orange-400 mt-1"></i>
-                <div>
-                    <div class="font-semibold text-xl mb-2">Fully Non-Custodial</div>
-                    <div class="text-zinc-400">You control your keys at all times. We never see or hold them.</div>
-                </div>
-            </div>
-
-            <div class="p-8 bg-zinc-900 border border-zinc-800 rounded-3xl flex gap-5">
-                <i class="fa-solid fa-lock text-3xl text-orange-400 mt-1"></i>
-                <div>
-                    <div class="font-semibold text-xl mb-2">Air-Gapped First</div>
-                    <div class="text-zinc-400">Vault creation and signing happens completely offline in Tails OS.</div>
-                </div>
-            </div>
-
-            <div class="p-8 bg-zinc-900 border border-zinc-800 rounded-3xl flex gap-5">
-                <i class="fa-solid fa-tv text-3xl text-orange-400 mt-1"></i>
-                <div>
-                    <div class="text-zinc-400"> Your own full node + self-hosted explorer(In Progress).</div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Security -->
-    <div id="security" class="max-w-5xl mx-auto px-8 py-16 border-t border-zinc-800">
-        <div class="max-w-3xl mx-auto text-center">
-            <h2 class="text-4xl font-semibold tracking-tight mb-6">We don’t ask for trust.<br>We ask you to verify.</h2>
-            <p class="text-lg text-zinc-400 mb-8">
-                Our philosophy is strict operational security (opsec). Everything is designed to run fully air-gapped in Tails OS. 
-                Private keys never touch the internet. We use proper Shamir’s Secret Sharing and strong encryption.
-            </p>
-        </div>
-    </div>
-
-    <!-- Disclaimer -->
-    <div class="max-w-4xl mx-auto px-8 py-12 text-center border-t border-zinc-800 text-xs text-zinc-500 bg-zinc-900">
-        <p class="mb-4">
-            <strong>DISCLAIMER:</strong> BTCGuardiansHQ provides open-source tools for educational and personal use. 
-            We are not financial advisors. You are fully responsible for your own keys and funds. 
-            Use at your own risk. No liability is accepted for any loss.
-        </p>
-    </div>
-
-    <footer class="border-t border-zinc-800 py-8 text-center text-sm text-zinc-500">
-        © BTCGuardiansHQ • Built with cyberpunk values.
-    </footer>
-
-</body>
-</html>
+<section id="help"><div class="wrap"><h2>Get involved</h2><div class="grid">
+<div class="card"><h3>Review the code</h3><p>Independent volunteer review is wanted. Scope is in <a href="https://github.com/Ashworth78/btcguardianshq/blob/main/REVIEW.md">REVIEW.md</a>; start at <a href="https://github.com/Ashworth78/btcguardianshq/issues/3">issue #3</a>.</p></div>
+<div class="card"><h3>Report a security issue</h3><p>Please report privately. See <a href="https://github.com/Ashworth78/btcguardianshq/blob/main/SECURITY.md">SECURITY.md</a>.</p></div>
+<div class="card"><h3>Read the heir runbook</h3><p><a href="https://github.com/Ashworth78/btcguardianshq/blob/main/docs/heir-runbook.md">Step-by-step recovery</a> for non-technical heirs.</p></div>
+<div class="card"><h3>Sponsor</h3><p>Keeps the work free. No perks, just thanks. <a href="https://github.com/sponsors/Ashworth78">GitHub Sponsors</a>, or send bitcoin to:<br><code style="word-break:break-all">1sXyCoMdHmPi2axsmXqLeNSkRi7RXkfPQ</code></p></div>
+</div></div></section>
+</main>
+<footer><div class="wrap">BTCGuardiansHQ · MIT licensed · No custody, no KYC, no token · <a href="https://github.com/Ashworth78/btcguardianshq">GitHub</a> · <a href="https://x.com/satoshis_mate">@satoshis_mate</a><br>We don't ask for trust. We ask you to verify.</div></footer>
+</body></html>
