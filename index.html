@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>BTCGuardiansHQ · Free, open-source bitcoin inheritance</title>
@@ -29,9 +28,10 @@ caption{text-align:left;color:var(--mut);padding-bottom:10px}th,td{border-bottom
 thead th{color:var(--mut);font-weight:600}tr.me{background:rgba(247,147,26,.08)}tr.me th{color:var(--or)}
 .note{color:var(--mut);font-size:.9rem}.warn{border-left:3px solid var(--or);padding:12px 16px;background:var(--card);border-radius:8px}
 footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-size:.9rem}
+.tx{font-family:ui-monospace,monospace;font-size:.8rem;word-break:break-all;color:var(--tx)}.win{border-color:rgba(74,222,128,.45)}.win h3:before{content:"✓ ";color:#4ade80}
 </style></head><body>
 <header class="top"><div class="wrap"><a class="logo" href="#">BTC<span>Guardians</span>HQ</a>
-<nav aria-label="Main"><a href="#how">How it works</a><a class="opt" href="#status">Status</a><a class="opt" href="#compare">Compare</a><a href="https://github.com/Ashworth78/btcguardianshq">GitHub</a></nav></div></header>
+<nav aria-label="Main"><a href="#how">How it works</a><a class="opt" href="#status">Status</a><a class="opt" href="#wins">Milestones</a><a class="opt" href="#compare">Compare</a><a class="opt" href="#credits">Credits</a><a href="https://github.com/Ashworth78/btcguardianshq">GitHub</a></nav></div></header>
 <main>
 <div class="wrap hero">
 <span class="badge">Unaudited prototype · volunteer review open</span>
@@ -50,10 +50,20 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
 
 <section id="status"><div class="wrap"><h2>Works now / Not yet</h2><p class="sub">Honest about where it is.</p>
 <div class="grid">
-<div class="card"><h3>Works now</h3><ul class="ok"><li>3-of-5 Shamir shares of a BIP39 seed</li><li>Argon2id + AES-256-GCM encryption</li><li>Fully offline use on Tails</li><li>Heir runbook in plain English</li><li>Own archival Bitcoin Core node (<a href="https://github.com/Ashworth78/btcguardianshq/blob/main/docs/Node-proofs.md">proofs</a>)</li><li>Private, LAN-only Mempool explorer</li></ul></div>
-<div class="card"><h3>Not yet</h3><ul class="no"><li>Multisig</li><li>Timelocks / on-chain rules</li><li>PSBT signing</li><li>Miniscript inheritance (being tested on testnet)</li><li>Independent review completed</li></ul></div>
+<div class="card"><h3>Works now</h3><ul class="ok"><li>3-of-5 Shamir shares of a BIP39 seed</li><li>Argon2id + AES-256-GCM encryption</li><li>Fully offline use on Tails</li><li>Heir runbook in plain English</li><li>Timelocked heir recovery on signet: a vault.js seed as the Liana heir key, spent alone after the timelock (<a href="https://github.com/Ashworth78/btcguardianshq/blob/main/docs/miniscript-signet-test.md">test results</a>)</li><li>Own archival Bitcoin Core node (<a href="https://github.com/Ashworth78/btcguardianshq/blob/main/docs/Node-proofs.md">proofs</a>)</li><li>Private, LAN-only Mempool explorer</li></ul></div>
+<div class="card"><h3>Not yet</h3><ul class="no"><li>Multisig</li><li>Timelocks built into vault.js itself</li><li>PSBT signing</li><li>Miniscript inheritance on mainnet</li><li>Independent review completed</li></ul></div>
 </div>
 <p class="warn" style="margin-top:20px">vault.js is an unaudited prototype. Do not trust real funds to it yet. Test with fake data only.</p>
+</div></section>
+
+<section id="wins"><div class="wrap"><h2>Milestones</h2><p class="sub">Proven on signet test coins with no value. Each claim links to its evidence.</p>
+<div class="grid">
+<div class="card win"><h3>Heir spends alone after a timelock</h3><p>2 Nov 2026. A 12-word seed made offline by <code>vault.js create --words 12</code> was used as the heir key in a Liana inheritance wallet. After the 3-block timelock, the heir alone signed and broadcast the recovery.</p><p class="tx" style="margin-top:10px">3f066cece5a0a3dad0156625fdc3a70986a1102a06a84b993b3c4a13c0e42c7c</p></div>
+<div class="card win"><h3>First timelock recovery</h3><p>1 Nov 2026. The heir2 test key signed alone through the CSV recovery path in Liana on signet.</p><p class="tx" style="margin-top:10px">3114c3e5fa76f995be731e1d6e328296c37e6cc1607f1a6489e6f8deae38bcbe</p></div>
+<div class="card win"><h3>Tests from a contributor</h3><p>The first outside pull request added an offline fake-data test suite for vault.js. All 86 tests pass on Tails.</p></div>
+<div class="card win"><h3>Results written up</h3><p>The method, the dead ends and the lessons are in <a href="https://github.com/Ashworth78/btcguardianshq/blob/main/docs/miniscript-signet-test.md">miniscript-signet-test.md</a>.</p></div>
+</div>
+<p class="note" style="margin-top:16px">Signet only. This is a functional test, not an audit. Do not use real funds.</p>
 </div></section>
 
 <section id="compare"><div class="wrap"><h2>How it compares</h2><p class="sub">Great projects already exist. Here is where this one fits.</p>
@@ -73,6 +83,18 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
 <section id="why"><div class="wrap"><h2>Why it matters</h2>
 <p class="lead">A lot of bitcoin is lost because nobody planned for what happens next. Free, open, verifiable tools mean any family can plan an inheritance without handing their keys or identity to a company.</p></div></section>
 
+<section id="credits"><div class="wrap"><h2>Credits</h2><p class="sub">BTCGuardiansHQ stands on the work of others. Thank you.</p>
+<div class="grid">
+<div class="card"><h3><a href="https://wizardsardine.com/liana/">Liana</a></h3><p>The open-source miniscript wallet by Wizardsardine, used for the timelocked inheritance tests.</p></div>
+<div class="card"><h3><a href="https://sparrowwallet.com/">Sparrow Wallet</a></h3><p>Used to read and check heir keys and their fingerprints.</p></div>
+<div class="card"><h3><a href="https://mempool.space/">mempool.space</a></h3><p>The open-source explorer behind our private LAN explorer, and how we check our node's block hashes.</p></div>
+<div class="card"><h3><a href="https://bitcoincore.org/">Bitcoin Core</a></h3><p>Runs our own archival node.</p></div>
+<div class="card"><h3><a href="https://tails.net/">Tails</a></h3><p>The offline, amnesic system where vault.js runs.</p></div>
+<div class="card"><h3>Contributors</h3><p>Everyone who opened a pull request, filed an issue or reviewed code. <a href="https://github.com/Ashworth78/btcguardianshq/graphs/contributors">See them on GitHub</a>.</p></div>
+</div>
+<p class="note" style="margin-top:16px">These projects are credited for the tools we use. They do not endorse BTCGuardiansHQ.</p>
+</div></section>
+
 <section id="help"><div class="wrap"><h2>Get involved</h2><div class="grid">
 <div class="card"><h3>Review the code</h3><p>Independent volunteer review is wanted. Scope is in <a href="https://github.com/Ashworth78/btcguardianshq/blob/main/REVIEW.md">REVIEW.md</a>; start at <a href="https://github.com/Ashworth78/btcguardianshq/issues/3">issue #3</a>.</p></div>
 <div class="card"><h3>Report a security issue</h3><p>Please report privately. See <a href="https://github.com/Ashworth78/btcguardianshq/blob/main/SECURITY.md">SECURITY.md</a>.</p></div>
@@ -80,5 +102,5 @@ footer{border-top:1px solid var(--line);padding:32px 0;color:var(--mut);font-siz
 <div class="card"><h3>Sponsor</h3><p>Keeps the work free. No perks, just thanks. <a href="https://github.com/sponsors/Ashworth78">GitHub Sponsors</a>, or send bitcoin to:<br><code style="word-break:break-all">1sXyCoMdHmPi2axsmXqLeNSkRi7RXkfPQ</code></p></div>
 </div></div></section>
 </main>
-<footer><div class="wrap">BTCGuardiansHQ · MIT licensed · No custody, no KYC, no token · <a href="https://github.com/Ashworth78/btcguardianshq">GitHub</a> · <a href="https://x.com/satoshis_mate">@satoshis_mate</a><br>We don't ask for trust. We ask you to verify.</div></footer>
+<footer><div class="wrap">BTCGuardiansHQ · MIT licensed · No custody, no KYC, no token · <a href="https://github.com/Ashworth78/btcguardianshq">GitHub</a> · <a href="https://x.com/marcswrth">@marcswrth</a><br>We don't ask for trust. We ask you to verify.</div></footer>
 </body></html>
